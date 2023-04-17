@@ -31,18 +31,15 @@ FROM paramount
 GROUP BY release_year
 ORDER BY COUNT (id) DESC;
 
-
 SELECT COUNT(id), release_year
 FROM netflix
 GROUP BY release_year
 ORDER BY COUNT (id) DESC;
 
-
 CREATE TABLE combined as
 	SELECT * FROM paramount
 		UNION
 	SELECT * FROM netflix;
-
 
 SELECT COUNT(id), release_year
 FROM combined
